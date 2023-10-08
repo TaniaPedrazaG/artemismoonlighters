@@ -1,0 +1,22 @@
+[
+    {
+        "name": "Reid Wiseman",
+        "rol": "Comandante",
+        "image": "/artemis_crew/wiseman.webp"
+    },
+    {
+        "name": "Victor Glover",
+        "rol": "Piloto",
+        "image": "/artemis_crew/glover.webp"
+    },
+    {
+        "name": "Christina Hammock Koch",
+        "rol": "Especialista en Misión 1",
+        "image": "/artemis_crew/koch.webp"
+    },
+    {
+        "name": "Jeremy Hansen",
+        "rol": "Especialista en Misión 2",
+        "image": "/artemis_crew/hansen.jpeg"
+    }
+]

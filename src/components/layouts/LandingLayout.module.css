@@ -1,0 +1,9 @@
+.floating-button {
+    color: #E8E6E3;
+    background-color: #0865b3;
+    transition: all .5s ease;
+}
+
+.floating-button:hover {
+    background-color: #ea6a46;
+}
