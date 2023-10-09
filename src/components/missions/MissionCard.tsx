@@ -6,7 +6,7 @@ const MissionCard = ({ data }) => {
     const { mission, crew, country, launch, landing, payload, patch, state } = data
     return (
         <Box display={'flex'} flexDirection={'row'} justifyContent={'center'}>
-            <Grid container maxWidth={700}>
+            <Grid container maxWidth={600}>
                 <Grid item xs={12} sm={8}>
                     <Box
                         display={'flex'}
@@ -42,10 +42,11 @@ const MissionCard = ({ data }) => {
                                             width={110}
                                             height={110}
                                             style={{
-                                                borderRadius: '50%'
+                                                borderRadius: '50%',
+                                                marginBottom: '10px'
                                             }}
                                         />
-                                        <Typography variant='subtitle2'>
+                                        <Typography variant='subtitle2' textAlign={'center'}>
                                             {name}
                                         </Typography>
                                     </Box>
@@ -104,8 +105,8 @@ const MissionCard = ({ data }) => {
                         <Image
                             src={patch}
                             alt={mission}
-                            width={280}
-                            height={280}
+                            width={230}
+                            height={230}
                         />
                     </Box>
                 </Grid>

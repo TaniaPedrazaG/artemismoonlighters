@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import MissionCard from '../missions/MissionCard';
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 
@@ -13,7 +13,7 @@ const Slides = ({ data }) => {
   }, [])
 
   return (
-    <Splide style={{ maxWidth: '830px' }}>
+    <Splide className={'slide-container'}>
       {
         slidesData.map((it) => (
           <SplideSlide key={it.mission}>

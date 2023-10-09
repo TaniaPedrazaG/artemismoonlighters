@@ -30,13 +30,19 @@ const HomePage: NextPage = () => {
           display={'flex'}
           flexDirection={'column'}
           alignItems={'center'}
+          mt={5}
         >
-          <Typography variant="h1" textAlign={'center'}>
+          <Typography variant="h3" textAlign={'center'} mb={3}>
           Tripulación
           </Typography>
           <SlidesV2 data={ArtemisCrew}/>
         </Box>
       </section>
+      <Divider
+        sx={{
+          margin: {xs: '10px', sm: '60px'}
+        }}
+      />
       <section id="rocket">
         <Box
           display={'flex'}
@@ -46,7 +52,7 @@ const HomePage: NextPage = () => {
             m: {xs: '20px 0px', sm: '20px 60px'}
           }}
         >
-          <Typography variant="h1" textAlign={'center'}>
+          <Typography variant="h3" textAlign={'center'} mb={3}>
             Cohete
           </Typography>
           <Image
@@ -57,6 +63,11 @@ const HomePage: NextPage = () => {
           />
         </Box>
       </section>
+      <Divider
+        sx={{
+          margin: {xs: '10px', sm: '60px'}
+        }}
+      />
       <section id="orion">
         <Box
           display={'flex'}
@@ -66,25 +77,30 @@ const HomePage: NextPage = () => {
             m: {xs: '20px 0px', sm: '20px 60px'}
           }}
         >
-          <Typography variant="h1" textAlign={'center'}>
+          <Typography variant="h3" textAlign={'center'} mb={3}>
             Orion
           </Typography>
           <Image
             src={'/orion.png'}
             alt="Orion"
-            width={337}
-            height={254}
+            width={307}
+            height={224}
           />
         </Box>
       </section>
+      <Divider
+        sx={{
+          margin: {xs: '10px', sm: '60px'}
+        }}
+      />
       <section id="history">
         <Box
           display={'flex'}
           flexDirection={'column'}
           alignItems={'center'}
         >
-          <Typography variant="h1" textAlign={'center'}>
-            Algo de historia ...
+          <Typography variant="h3" textAlign={'center'} mb={1}>
+            Algo de historia
           </Typography>
           <Slides data={ApolloMissions} />
         </Box>

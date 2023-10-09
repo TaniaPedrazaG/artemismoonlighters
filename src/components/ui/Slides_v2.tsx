@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import { useEffect, useState } from 'react';
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import CrewCard from '../missions/CrewCard';
+import { Grid } from '@mui/material';
 
 const SlidesV2 = ({ data }) => {
   const [slidesData, setSlidesData] = useState([])
@@ -17,15 +18,19 @@ const SlidesV2 = ({ data }) => {
   }, [])
 
   return (
-    <Splide options={options} style={{ maxWidth: '350px' }}>
+    <Grid
+      container
+      spacing={4}
+      sx={{
+        width: {xs: '100%', sm: 'calc(100% - 150px)'}
+      }}
+    >
       {
         slidesData.map((it) => (
-          <SplideSlide key={it.mission}>
-            <CrewCard data={it}/>
-          </SplideSlide>
+          <CrewCard key={it} data={it}/>
         ))
       }
-    </Splide>
+    </Grid>
   )
 }
 

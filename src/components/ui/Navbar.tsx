@@ -1,16 +1,22 @@
 import NextLink from 'next/link'
-import { AppBar, Box, Button, Link, Toolbar, Typography } from "@mui/material"
+import { AppBar, Box, Button, IconButton, Link, Toolbar, Typography } from "@mui/material"
 import { useRouter } from 'next/router';
+import { Menu } from '@mui/icons-material';
+import { useContext } from 'react';
+import { UiContext } from '../../contexts';
 
 export const Navbar = () => {
+  const { toogleSideMenu } = useContext(UiContext);
   const route = useRouter()
+
+  const noLayout = ['/capsules', '/future']
+
   return (
     <AppBar>
       <Toolbar>
         <NextLink href={'/'} passHref legacyBehavior>
           <Link display={'flex'} alignItems={'center'}>
             <Typography
-              variant='h5'
               fontWeight={500}
               sx={{ ml: 1 }}
               color={'secondary'}
@@ -22,7 +28,7 @@ export const Navbar = () => {
         <Box flex={1}/>
         <Box sx={{ display: { xs: 'none', sm: 'flex' } }}>
           {
-            route.asPath === '/'
+            !noLayout.includes(route.asPath)
               ? <>
                 <NextLink href={'#crew'} passHref legacyBehavior scroll={false}>
                   <Link>
@@ -44,6 +50,11 @@ export const Navbar = () => {
                     <Button sx={{ ml: 0.5 }}>Historia</Button>
                   </Link>
                 </NextLink>
+                <NextLink href={'/capsules'} passHref legacyBehavior scroll={false}>
+                  <Link>
+                    <Button sx={{ ml: 0.5 }}>Cápsulas</Button>
+                  </Link>
+                </NextLink>
                 <NextLink href={'/future'} passHref legacyBehavior scroll={false}>
                   <Link>
                     <Button sx={{ ml: 0.5 }}>Futuro</Button>
@@ -59,6 +70,12 @@ export const Navbar = () => {
               </>
           }
         </Box>
+        <IconButton
+          sx={{ display: { xs: 'flex', sm: 'none' } }}
+          onClick={ toogleSideMenu }
+        >
+            <Menu color={'secondary'}/>
+        </IconButton>
       </Toolbar>
     </AppBar>
   )

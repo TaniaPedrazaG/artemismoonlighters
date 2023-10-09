@@ -1,5 +1,6 @@
-import { Box, Grid, ImageList, ImageListItem, Typography } from '@mui/material'
+import { Box, Grid, Typography } from '@mui/material'
 import { LandingLayout } from '../../components/layouts'
+import Image from 'next/image'
 
 const Future = () => {
     const futureList = [
@@ -9,7 +10,6 @@ const Future = () => {
         {img: "/future/future_4.jpeg", title: "future_4"},
         {img: "/future/future_5.jpeg", title: "future_5"},
         {img: "/future/future_6.jpeg", title: "future_6"},
-        {img: "/future/future_7.jpeg", title: "future_7"},
     ]
 
     const futureVideos = [
@@ -24,47 +24,69 @@ const Future = () => {
                 display={'flex'}
                 flexDirection={'column'}
                 alignItems={'center'}
-                mt={'86px'}
+                sx={{
+                    margin: { xs: 0, sm: '60px' }
+                }}
             >
-                <Typography variant="h1" textAlign={'center'}>
+                <Typography variant="h4" textAlign={'center'} mt={5}>
                     El futuro de Artemis
                 </Typography>
                 <Box
                     display={'flex'}
-                    flexDirection={'row'}
+                    flexDirection={{ xs: 'column', sm: 'row' }}
                     alignItems={'center'}
-                    sx={{ width: 500, mt: 2 }}
+                    mt={5}
+                    mb={5}
                 >
-                    <ImageList variant="masonry" cols={3} gap={5}>
-                        {futureList.map((item) => (
-                            <ImageListItem key={item.img}>
-                                <img
-                                    srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
-                                    src={`${item.img}?w=248&fit=crop&auto=format`}
-                                    alt={item.title}
-                                    loading="lazy"
-                                />
-                            </ImageListItem>
-                        ))}
-                    </ImageList>
+                    <Grid container spacing={2}>
+                        {
+                            futureList.map((it) => (
+                                <Grid
+                                    item
+                                    xs={12}
+                                    sm={4}
+                                    key={it.title}
+                                    display={'flex'}
+                                    flexDirection={'column'}
+                                    alignItems={'center'}
+                                >
+                                    <Image
+                                        src={it.img}
+                                        alt={it.title}
+                                        width={330}
+                                        height={570}
+                                    />
+                                </Grid>
+                            ))
+                        }
+                    </Grid>
                 </Box>
                 <Box
                     display={'flex'}
                     flexDirection={{ xs: 'column', sm: 'row' }}
                     alignItems={'center'}
-                    sx={{ width: '100vw' }}
+                    mt={5}
                 >
                     <Grid container spacing={2}>
                         {
                             futureVideos.map((it) => (
-                                <Grid item key={it.title} xs={12} sm={3}>
+                                <Grid
+                                    item
+                                    xs={12}
+                                    sm={4}
+                                    key={it.title}
+                                    display={'flex'}
+                                    flexDirection={'column'}
+                                    alignItems={'center'}
+                                >
                                     <video
                                         id="future_vid"
                                         autoPlay
                                         muted
+                                        loop
                                         preload="none"
                                         style={{
-                                            maxHeight: '640px'
+                                            maxHeight: '600px'
                                         }}
                                     >
                                         <source
@@ -77,7 +99,6 @@ const Future = () => {
                             ))
                         }
                     </Grid>
-                    
                 </Box>
             </Box>
         </LandingLayout>

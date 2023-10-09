@@ -4,6 +4,7 @@ import { Tooltip, IconButton } from "@mui/material";
 import styles from './LandingLayout.module.css'
 import { Navbar } from "../ui";
 import { SmartToy } from "@mui/icons-material";
+import { SideMenu } from "../ui/SideMenu";
 
 interface Props extends PropsWithChildren {
     title: string;
@@ -28,6 +29,7 @@ export const LandingLayout: FC<Props> = ({ children, title, pageDescription, ima
       <nav>
         <Navbar/>
       </nav>
+      <SideMenu/>
       <main 
         style={{
           margin: '56px 0px',
@@ -35,7 +37,7 @@ export const LandingLayout: FC<Props> = ({ children, title, pageDescription, ima
       >
         {children}
         <div
-          style={{ position: 'fixed', bottom: '40px', right: '40px' }}
+          style={{ position: 'fixed', bottom: '10px', right: '10px' }}
         >
           <Tooltip title={'Moonlight Chat'}>
             <IconButton size="large" className={styles['floating-button']}>
