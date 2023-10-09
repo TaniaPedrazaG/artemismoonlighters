@@ -149,7 +149,7 @@
         "country": "USA",
         "launch": "16 de Abril de 1972",
         "landing": "27 de Abril de  1972",
-        "payload": ["Casper (CM-113)", "Orion (LM-11)"],
+        "payload": ["Casper (CM-113)", "Orión (LM-11)"],
         "patch": "/apollo_missions/apollo_16/apollo_16.webp",
         "state": true
     },

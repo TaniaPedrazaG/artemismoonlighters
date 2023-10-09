@@ -89,19 +89,19 @@ body {
 
 @media only screen and (max-width: 600px) {
     .splide slide-container is-initialized splide--slide splide--ltr splide--draggable is-active is-overflow {
-        width: 300px;
+        width: 270px;
     }
     
     .splide__track splide__track--slide splide__track--ltr splide__track--draggable {
-        width: 300px;
+        width: 270px;
     }
     
     .splide__list {
-        width: 300px;
+        width: 270px;
     }
     
     .splide__slide is-active is-visible {
-        width: 300px;
+        width: 270px;
     }
     .capsules-videos {
         width: 286px;

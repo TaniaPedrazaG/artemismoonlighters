@@ -42,7 +42,7 @@ export const Navbar = () => {
                 </NextLink>
                 <NextLink href={'#orion'} passHref legacyBehavior scroll={false}>
                   <Link>
-                    <Button sx={{ ml: 0.5 }}>Orion</Button>
+                    <Button sx={{ ml: 0.5 }}>Orión</Button>
                   </Link>
                 </NextLink>
                 <NextLink href={'#history'} passHref legacyBehavior scroll={false}>
@@ -64,7 +64,7 @@ export const Navbar = () => {
               : <>
                 <NextLink href={'/'} passHref legacyBehavior scroll={false}>
                   <Link>
-                    <Button sx={{ ml: 0.5 }}>Incio</Button>
+                    <Button sx={{ ml: 0.5 }}>Inicio</Button>
                   </Link>
                 </NextLink>
               </>

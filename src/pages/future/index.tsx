@@ -28,7 +28,7 @@ const Future = () => {
                     margin: { xs: 0, sm: '60px' }
                 }}
             >
-                <Typography variant="h4" textAlign={'center'} mt={5}>
+                <Typography className="animate__animated animate__bounce" variant="h4" textAlign={'center'} mt={5}>
                     El futuro de Artemis
                 </Typography>
                 <Box
@@ -38,7 +38,7 @@ const Future = () => {
                     mt={5}
                     mb={5}
                 >
-                    <Grid container spacing={2}>
+                    <Grid container spacing={2} sx={{ margin: { xs: 0, sm: '0px 5rem' }}}>
                         {
                             futureList.map((it) => (
                                 <Grid

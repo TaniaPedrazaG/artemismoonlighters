@@ -1,11 +1,11 @@
 import { NextPage } from "next"
+import Image from "next/image"
 import { LandingLayout } from "../components/layouts"
 import { Box, Divider, Typography } from "@mui/material"
 import Slides from "../components/ui/Slides"
 import ApolloMissions from '../data/apollo.json'
 import ArtemisCrew from "../data/artemisCrew.json";
 import SlidesV2 from "../components/ui/Slides_v2"
-import Image from "next/image"
 
 const HomePage: NextPage = () => {
   return (
@@ -30,10 +30,38 @@ const HomePage: NextPage = () => {
           display={'flex'}
           flexDirection={'column'}
           alignItems={'center'}
-          mt={5}
+          mt={4}
         >
-          <Typography variant="h3" textAlign={'center'} mb={3}>
-          Tripulación
+          <Typography variant="h4" textAlign={'center'} mb={3}>
+            Artemis II
+          </Typography>
+          <video
+              id="capsule_vid"
+              controls
+              preload="none"
+              poster='/capsules/capsules_poster.jpeg'
+              className='capsules-videos'
+          >
+              <source
+                  src={'/artemis_II.mp4'}
+                  type="video/mp4"
+              />
+          </video>
+        </Box>
+      </section>
+      <Divider
+        sx={{
+          margin: {xs: '10px', sm: '60px'}
+        }}
+      />
+      <section id="crew">
+        <Box
+          display={'flex'}
+          flexDirection={'column'}
+          alignItems={'center'}
+        >
+          <Typography variant="h4" textAlign={'center'} mb={3}>
+            Tripulación
           </Typography>
           <SlidesV2 data={ArtemisCrew}/>
         </Box>
@@ -52,7 +80,7 @@ const HomePage: NextPage = () => {
             m: {xs: '20px 0px', sm: '20px 60px'}
           }}
         >
-          <Typography variant="h3" textAlign={'center'} mb={3}>
+          <Typography variant="h4" textAlign={'center'} mb={3}>
             Cohete
           </Typography>
           <Image
@@ -77,12 +105,12 @@ const HomePage: NextPage = () => {
             m: {xs: '20px 0px', sm: '20px 60px'}
           }}
         >
-          <Typography variant="h3" textAlign={'center'} mb={3}>
-            Orion
+          <Typography variant="h4" textAlign={'center'} mb={3}>
+            Orión
           </Typography>
           <Image
             src={'/orion.png'}
-            alt="Orion"
+            alt="Orión"
             width={307}
             height={224}
           />
@@ -99,7 +127,7 @@ const HomePage: NextPage = () => {
           flexDirection={'column'}
           alignItems={'center'}
         >
-          <Typography variant="h3" textAlign={'center'} mb={1}>
+          <Typography variant="h4" textAlign={'center'} mb={1}>
             Algo de historia
           </Typography>
           <Slides data={ApolloMissions} />
